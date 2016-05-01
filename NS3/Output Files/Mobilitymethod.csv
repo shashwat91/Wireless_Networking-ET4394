@@ -1,0 +1,16 @@
+changing mobility method for 20 nodes 
+
+Mobility_Method,Through_put,Delay
+UniformDiscPositionAllocator,0.668921,9066.94
+changing mobility method for 20 nodes 
+
+Mobility_Method,Through_put,Delay
+RandomRectanglePositionAllocator,0.66899,8636.91
+changing mobility method for 20 nodes 
+
+Mobility_Method,Through_put,Delay
+RandomBoxPositionAllocator,0.668991,8016.7
+changing mobility method for 20 nodes 
+
+Mobility_Method,Through_put,Delay
+GridPositionAllocator,0.668922,8478.78

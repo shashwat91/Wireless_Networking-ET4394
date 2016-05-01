@@ -1,0 +1,5 @@
+probability of false alarm = 7.0875e-04
+probability of detection = 0.9527
+
+probability of false alarm = 0.002
+probability of detection = 0.9110

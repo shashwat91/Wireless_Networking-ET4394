@@ -1,0 +1,14 @@
+Value for 498 MHz: -54.78
+Value for 522 MHz: -57.45
+Value for 698 MHz: -59.68
+Value for 722 MHz: -53.35
+Value for 762 MHz: -57.32
+Value for 550 MHz: -70.27
+Value for 650 MHz: -75.98
+Value for 750 MHz: -74.23
+Value for 850 MHz: -78.39
+Value for 800 MHz: -51.35
+Value for 792 MHz: -51.42
+Value for 796 MHz: -45.47
+Value for 694 MHz: -68.27
+Value for 702 MHz: -69.91
