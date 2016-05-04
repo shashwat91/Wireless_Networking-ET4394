@@ -110,7 +110,7 @@ int main (int argc, char *argv[])
 	{
 		case 1:	 
 		data_file << "GridPositionAllocator,";
-		AnimationInterface anim1("GridPositionAllocator.xml");
+		//AnimationInterface anim1("GridPositionAllocator.xml");
 		mobility.SetPositionAllocator ("ns3::GridPositionAllocator",
 		"MinX", DoubleValue (0.0),
 		"MinY", DoubleValue (0.0),
@@ -121,7 +121,7 @@ int main (int argc, char *argv[])
 		break;
 		case 2:		
 		data_file << "UniformDiscPositionAllocator,";
-		AnimationInterface anim2("UniformDiscPositionAllocator.xml");
+		//AnimationInterface anim2("UniformDiscPositionAllocator.xml");
 		mobility.SetPositionAllocator ("ns3::UniformDiscPositionAllocator",
 		"X", DoubleValue (5.0),
 		"Y", DoubleValue (5.0),
@@ -129,14 +129,14 @@ int main (int argc, char *argv[])
 		break;
 		case 3:
 		data_file << "RandomRectanglePositionAllocator,";
-		AnimationInterface anim3("RandomRectanglePositionAllocator.xml");
+		//AnimationInterface anim3("RandomRectanglePositionAllocator.xml");
 		mobility.SetPositionAllocator ("ns3::RandomRectanglePositionAllocator",
 		"X", StringValue ("ns3::UniformRandomVariable[Min=0.0|Max=1.0]"),
 		"Y", StringValue ("ns3::UniformRandomVariable[Min=0.0|Max=1.0]"));
 		break;
 		case 4:		
 		data_file << "RandomBoxPositionAllocator,";
-		AnimationInterface anim4("RandomBoxPositionAllocator.xml");
+		//AnimationInterface anim4("RandomBoxPositionAllocator.xml");
 		mobility.SetPositionAllocator ("ns3::RandomBoxPositionAllocator",
 		"X", StringValue ("ns3::UniformRandomVariable[Min=0.0|Max=1.0]"),
 		"Y", StringValue ("ns3::UniformRandomVariable[Min=0.0|Max=1.0]"),
@@ -177,8 +177,6 @@ int main (int argc, char *argv[])
 	//Initialising Simulation time
 	serverApp.Start (Seconds (1.0));
 	serverApp.Stop (Seconds (simulationTime));
-	clientApp.Start (Seconds (2.0));
-	clientApp.Stop (Seconds (simulationTime));
 	
 	//Setting up UDP protocol attributes 
 	UdpClientHelper myClient (apNodeInterface.GetAddress (0), 9);
@@ -187,6 +185,8 @@ int main (int argc, char *argv[])
 	myClient.SetAttribute ("MaxPackets", UintegerValue (nStanodes));
 	
 	ApplicationContainer clientApp = myClient.Install (wifiStaNode);
+	clientApp.Start (Seconds (2.0));
+	clientApp.Stop (Seconds (simulationTime));
 	
 	//Displaying of IP Address of nodes
 	std::cout<<"Address for Access Point node: "<<apNodeInterface.GetAddress(0)<<std::endl;
@@ -202,7 +202,7 @@ int main (int argc, char *argv[])
 	//Writing packet data to pcap file (readable by WireShark)
 	phy.EnablePcap("Simulation_nodes",wifiStaNode);
 	phy.EnablePcap("Simulation_apnodes",wifiapNode);
-	
+	AnimationInterface anim("Output.xml");
 	//Calculation of Throughput and Delay
 	double throughput[100];
 	double Ddelay[100];
